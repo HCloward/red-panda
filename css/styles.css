@@ -44,6 +44,7 @@ div {
 /* Text */
 
 h1 {
+  margin-top: 50px;
   margin-bottom: 30px;
   text-align: center;
   font: bold 2em arial, sans-serif;
@@ -153,76 +154,70 @@ h1.notMain {
 
 header {
     background-color: papayawhip;
-	width: 100%;
-	height: 85px;
-	position: fixed;
-	top: 0;
-	left: 0;
 	border-bottom: 2px solid black;
-	z-index: 100;
-
+    height: 120px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
-nav {
-	float: right;
-	padding: 20px;	
 
+nav ul {
+	padding-left: 0;
+	text-align:  right;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
 nav li {
-	float: left;
-	padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+	display: inline;
+    font-size: 1.3em;
 }
 
-#nav li:hover, a:hover {
-    color: black;
-    display: block;
+nav ul a {
+	display: inline-block;
+	font-weight: bold;
+	color: indianred;
+	padding: .9em;
+	border-radius: .5em;
+	text-decoration: none;
 }
 
-li a {
-    display: block;
+nav ul a:hover,
+nav ul a:focus {
+	color: #000;
+	background: indianred;
 }
 
 #navTitle {
     position: fixed;
-    top: 20px;
-    left: 10%;
+    top: 30px;
+    left: 5%;
     color: indianred;
+    margin-top: 10px;
 }
 #menu-icon {
-    
 	display: hidden;
-	width: 40px;
-	height: 40px;
-    border-radius: 4px;
+	width: 50px;
+	height: 50px;
+	background: url(../images/menu-alt-512.png) center;
+    border-radius: 8px;
+}
+
+a:hover#menu-icon {
+	border-radius: 4px 4px 0 0;
+    color: black;
+    background-color: indianred;
+    border: 1px solid black;
 }
 
 ul {
 	list-style: none;
 }
 
-nav li {
-    font-size: 1.3em;
-    background-color: papayawhip;
-}
-
-nav li:hover {
-    background-color: indianred;
-    border-radius: 10px;
-    color: black;
-    transition: background-color .4s;
-   
-}
-
 a:hover {
     color: black;
-}
-a:hover#menu-icon {
-    color: black;
-	border-radius: 4px 4px 0 0;
-    background-color: indianred;
-    border: 1px solid black;
 }
 
 /* Media */
@@ -263,7 +258,7 @@ video {
 
 
 /*MEDIA QUERY*/
-@media only screen and (max-width : 1051px) {
+@media only screen and (max-width : 1100px) {
 
 	header {
 		position: fixed;
@@ -283,46 +278,62 @@ video {
         margin-left: 5px;
         margin-right: 5px;
     }
-    
-	#menu-icon {
+    #menu-icon {
+
 		display:inline-block;
+
+	}
+	
+    #menu-icon {
+        position: absolute;
+        right: 20px;
+		top: 30px;
         border: 2px solid black;
         background: url(../images/1478372354_menu-alt.svg) no-repeat center;
-        width: 40px;
-	    height: 40px;
+        width: 60px;
+	    height: 60px;
         vertical-align: middle;
         background-color: whitesmoke;
 
-	}
-   nav ul, nav:active ul { 
-        color: indianred;
+	} 
+    nav ul, nav:active ul { 
 		display: none;
 		position: absolute;
-		background-color: bisque;
-		border: 2px solid #444;
+		background: #fff;
+		border: 3px solid #444;
 		right: 20px;
 		top: 60px;
 		width: 50%;
 		border-radius: 4px 0 4px 4px;
+        overflow: hidden;
 	}
-   
-    nav:hover li, nav:active li {
-        border-radius: 0;
-        color: back;
-    }    
-        
-   nav:hover ul {
-		display: block;
-        transition: background-color .4s, color 0s .1s;
-	}  
 
 	nav li {
+        display: block;
 		text-align: center;
 		width: 100%;
-		padding: 10px;
+		margin: 0;
         border-bottom: 2px solid black;
 	}
-     
+    
+	nav:hover ul {
+        border-radius: 0;
+		display: block;
+        transition: background-color .4s, color 0s .1s;
+	}
+    
+    nav ul a {
+        display: inline-block;
+        font-weight: bold;
+        color: indianred;
+        text-decoration: none;
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+        
+   }
+    
+    
     .col-sm-12 {
         width: 90%;
     }
@@ -338,7 +349,7 @@ video {
     
 }
 
-@media (min-width: 1051px) and (max-width : 1400px) {
+@media (min-width: 1099px) and (max-width : 1400px) {
     p {
         padding-right: 100px;
         padding-left: 100px;
@@ -354,11 +365,7 @@ video {
         margin-left: 100px;
         margin-right: 100px;
     }
-    nav li {
-    font-size: 1.1em;
-    padding-left: 10px;
-        padding-right: 10px;
-   }
+    
 }
     
 
